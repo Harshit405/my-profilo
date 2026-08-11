@@ -1,0 +1,23 @@
+# Robots.txt - Search Engine Crawling Directives
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /temp
+Disallow: /*.json$
+Crawl-delay: 1
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+Disallow: /private
+
+# Disable crawlbot for commercial search engines
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+# Sitemap location  
+Sitemap: https://harshitsettipalli.com/sitemap.xml
