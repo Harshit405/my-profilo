@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Harshit Settipalli-Portfolio">
     <meta property="og:description" content="FPGA & SystemVerilog engineer focused on embedded systems and satellite communication.">
-    <meta property="og:image" content="/og-image.jpg">
+    <meta property="og:image" content="harshit.jpeg">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
@@ -101,6 +101,7 @@
             align-items: center;
             padding: 6rem 0;
             position: relative;
+            scroll-margin-top: 100px;
         }
 
         /* ===== THEME TOGGLE ===== */
@@ -643,6 +644,46 @@
         }
 
         /* ===== PROJECTS SECTION ===== */
+        .project-filters {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 0 auto 2rem;
+            max-width: 900px;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.1rem;
+            min-width: 120px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.01em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-1px);
+            border-color: var(--accent-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: #fff;
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -987,6 +1028,15 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-left: auto;
         }
 
         .nav-logo {
@@ -1000,8 +1050,12 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.9rem 1.25rem;
             list-style: none;
+            margin: 0 auto;
         }
 
         .nav-link {
@@ -1011,6 +1065,10 @@
             font-size: 0.95rem;
             position: relative;
             transition: color 0.2s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .nav-link::after {
@@ -1312,7 +1370,7 @@
                 <li><a href="#articles" class="nav-link">Articles</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="nav-actions">
                 <button class="theme-toggle gpu-accelerated" id="themeToggle" aria-label="Toggle theme">
                     <span class="theme-icon" id="moonIcon">🌙</span>
                     <span class="theme-icon hidden" id="sunIcon">☀️</span>
@@ -1366,8 +1424,8 @@
                 <div class="hero-text">
                     <p class="hero-greeting gpu-accelerated">Hi, I'm</p>
                     <h1 class="hero-title gpu-accelerated">Harshit</h1>
-                    <p class="hero-role gpu-accelerated">FPGA & System Verilog, Embedded Systems, Satellite Communication Engineer</p>
-                    <p class="hero-subtitle gpu-accelerated">Building reliable systems for a connected world.</p>
+                    <p class="hero-role gpu-accelerated">Satellite Engineer | RTL · FPGA · ASIC · Embedded Systems</p>
+                    <p class="hero-subtitle gpu-accelerated">From silicon to satellite — building systems that just work.</p>
                     <div class="cta-buttons gpu-accelerated">
                         <a href="#projects" class="btn btn-primary">View My Projects</a>
                         <a href="#contact" class="btn btn-secondary">Connect With Me</a>
@@ -1440,7 +1498,7 @@
                 </div>
                 <div class="tab-content" id="experience-tab">
                     <div class="timeline-item">
-                        <div class="timeline-date">Dec 2025 - Present</div>
+                        <div class="timeline-date">Dec 2025 - Mar 2026</div>
                         <div>
                             <h3 class="timeline-title">Research Intern</h3>
                             <p class="timeline-subtitle"><strong>Universiti Putra Malaysia</strong> · Malaysia · <span style="color: var(--accent-primary); font-weight:600;">Internship</span></p>
@@ -1549,12 +1607,14 @@
                 <h2 class="section-title">Featured Projects</h2>
                 <p class="section-subtitle">Some of my recent work</p>
             </div>
-            <div class="project-filters" style="display:flex;gap:1rem;justify-content:center;margin-bottom:1.25rem;">
-                <button class="filter-btn active" data-filter="all" style="padding:0.6rem 1rem;border-radius:12px;border:none;background:var(--bg-secondary);">All</button>
-                <button class="filter-btn" data-filter="embedded" style="padding:0.6rem 1rem;border-radius:12px;border:none;background:var(--bg-tertiary);">Embedded Systems</button>
-                <button class="filter-btn" data-filter="web" style="padding:0.6rem 1rem;border-radius:12px;border:none;background:var(--bg-tertiary);">Web</button>
-                <button class="filter-btn" data-filter="verilog" style="padding:0.6rem 1rem;border-radius:12px;border:none;background:var(--bg-tertiary);">Verilog / FPGA</button>
-                <button class="filter-btn" data-filter="networking" style="padding:0.6rem 1rem;border-radius:12px;border:none;background:var(--bg-tertiary);">Networking</button>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="embedded">Embedded Systems</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="verilog">Verilog / FPGA</button>
+                <button class="filter-btn" data-filter="networking">Networking</button>
+                <button class="filter-btn" data-filter="iot">IoT</button>
+                <button class="filter-btn" data-filter="ai-gpu">AI / GPU</button>
             </div>
             <div class="projects-grid">
                 <div class="project-card fade-in gpu-accelerated" data-category="verilog">
@@ -1601,7 +1661,7 @@
                 </div>
                 <div class="project-card fade-in gpu-accelerated" data-category="web">
                     <div class="project-image">
-                        <img src="https://imgs.search.brave.com/eJdQTDjtuvpGAbVAfJQ86RPPWJYd1O_WQk3DYoTUv7k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mYmku/Y3VsdHMzZC5jb20v/dXBsb2FkZXJzLzI4/MTYyNzI3L2lsbHVz/dHJhdGlvbi1maWxl/LzgxODljMzkxLWMz/ZjYtNDE3ZC05NGE4/LTI5NmNiYTY5YWZk/ZC8xMTAwLmpwZw" alt="TaskFlow - Premium Task Management Experience" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="TaskFlow - Premium Task Management Experience" style="width: 100%; height: 100%; object-fit: contain; background: var(--bg-tertiary); padding: 1.2rem;" onerror="this.onerror=null;this.src='harshit.jpeg';">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">TaskFlow - Premium Task Management Experience</h3>
@@ -1620,7 +1680,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="project-card fade-in gpu-accelerated" data-category="embedded">
+                <div class="project-card fade-in gpu-accelerated" data-category="embedded iot">
                     <div class="project-image">
                         <img src="https://opengraph.githubassets.com/1/Harshit405/Advanced-IDE-Based-Fault-Detection-and-Management-for-2-Phase-Transmission-Lines" alt="Fault Detection System" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -1642,7 +1702,28 @@
                         </a>
                     </div>
                 </div>
-                <div class="project-card fade-in gpu-accelerated" data-category="embedded">
+                <div class="project-card fade-in gpu-accelerated" data-category="embedded iot">
+                    <div class="project-image">
+                        <img src="https://opengraph.githubassets.com/1/Harshit405/Smart-Kitchen-Safety-System-Using-MQ-2-Chemical-Sensor" alt="Smart Kitchen Safety System" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Smart Kitchen Safety System Using MQ-2 Chemical Sensor</h3>
+                        <p class="project-description">An embedded IoT-based solution for real-time gas and smoke detection in kitchens. It monitors LPG, propane, methane, and smoke levels, then triggers alarms, alerts, and safety actions whenever thresholds are exceeded.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">MQ-2</span>
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Embedded Systems</span>
+                            <span class="project-tag">Safety</span>
+                        </div>
+                        <a href="https://github.com/Harshit405/Smart-Kitchen-Safety-System-Using-MQ-2-Chemical-Sensor" class="project-link">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card fade-in gpu-accelerated" data-category="embedded iot">
                     <div class="project-image">
                         <img src="https://opengraph.githubassets.com/1/Harshit405/Design-and-Implementation-of-an-Intelligent-Street-Lighting-System" alt="Intelligent Street Lighting System" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -1705,9 +1786,9 @@
                         </a>
                     </div>
                 </div>
-                <div class="project-card fade-in gpu-accelerated" data-category="networking">
+                <div class="project-card fade-in gpu-accelerated" data-category="networking ai-gpu">
                     <div class="project-image">
-                        <img src="https://imgs.search.brave.com/w_gXs3SC46SdnTkBgfvR1Gcq3VuDCZxH_SYlO5xvIVg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXBwdmlld3guY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDIx/LzAxL3doYXQtaXMt/YS1sb2FkLWJhbGFu/Y2VyLnBuZw" alt="Load Balancer for Multi-GPU Systems" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="Nvidia_CUDA_Logo.jpg" alt="Load Balancer for Multi-GPU Systems" style="width: 100%; height: 100%; object-fit: contain; background: var(--bg-tertiary); padding: 1.1rem;" onerror="this.onerror=null;this.src='harshit.jpeg';">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">⚡Load Balancer for Multi-GPU Systems</h3>
@@ -1743,7 +1824,7 @@
                 <div class="project-card fade-in gpu-accelerated">
                     <div class="cert-content">
                         <div class="cert-logo">
-                            <img src="https://media.licdn.com/dms/image/v2/D560BAQHFICF0e7oB4g/company-logo_200_200/B56ZjAejoJG0AM-/0/1755575893008/hack2skill_logo?e=2147483647&v=beta&t=dhE791yCNqDtHYkMDV9_DRlADi35qVnI3hhwk_cUudA" alt="Hack2skill logo">
+                            <img src="ii2s.webp" alt="Hack2skill logo" onerror="this.onerror=null;this.src='harshit.jpeg';">
                         </div>
                         <div class="cert-details">
                             <h4 class="cert-title">ISRO Bharatiya Antariksh Hackathon</h4>
@@ -1785,7 +1866,7 @@
                 <div class="project-card fade-in gpu-accelerated">
                     <div class="cert-content">
                         <div class="cert-logo">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJXzeImAiH1KttGE_h6Si1V2WwaiGPpBUGXQ&s" alt="Udemy logo">
+                            <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy logo">
                         </div>
                         <div class="cert-details">
                             <h4 class="cert-title">Python Programming for Beginners</h4>
@@ -1799,7 +1880,7 @@
                 <div class="project-card fade-in gpu-accelerated">
                     <div class="cert-content">
                         <div class="cert-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode logo" onerror="this.onerror=null;this.src='harshit.jpeg';">
                         </div>
                         <div class="cert-details">
                             <h4 class="cert-title">LeetCode 75 Challenge – Completed</h4>
@@ -2027,14 +2108,14 @@
         const sections = document.querySelectorAll('section[id]');
         
         window.addEventListener('scroll', () => {
-            const scrollY = window.pageYOffset;
+            const scrollY = window.pageYOffset + 120;
             
             sections.forEach(section => {
                 const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - 100;
+                const sectionTop = section.offsetTop;
                 const sectionId = section.getAttribute('id');
                 
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                     navLinks.forEach(link => {
                         link.classList.remove('active');
                         if (link.getAttribute('href') === `#${sectionId}`) {
@@ -2201,7 +2282,10 @@
                     e.preventDefault();
                     const target = document.querySelector(href);
                     if (target) {
-                        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                        const navbarHeight = document.getElementById('navbar')?.offsetHeight || 80;
+                        const targetRect = target.getBoundingClientRect();
+                        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                        const offsetTop = currentScroll + targetRect.top - navbarHeight - 10;
                         window.scrollTo({
                             top: offsetTop,
                             behavior: 'smooth'
@@ -2236,8 +2320,8 @@
                     setActiveButton(btn);
 
                     projectCards.forEach(card => {
-                        const cat = card.getAttribute('data-category') || 'web';
-                        if (filter === 'all' || cat === filter) {
+                        const categories = (card.getAttribute('data-category') || 'web').split(/\s+/);
+                        if (filter === 'all' || categories.includes(filter)) {
                             card.style.display = '';
                         } else {
                             card.style.display = 'none';
